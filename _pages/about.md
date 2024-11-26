@@ -20,8 +20,8 @@ Education
 
 <!-- Publications
 ------
-- **Zhi Yang**, Ziming Wang, Changwu Huang, Xin Yao. An Explainable Feature Selection Approach for Fair Machine Learning[C]//International Conference on Artificial Neural Networks. Cham: Springer Nature Switzerland, 2023: 75-86.
-- **Zhi Yang**, Ziming Wang, Changwu Huang, Xin Yao. Towards Private and Fair Machine Learning: Group-Specific Differentially Private Stochastic Gradient Descent with Threshold Optimization[C]//The International Conference on Neural Information Processing, 2024(accepted). -->
+- **Zhi Yang**, Ziming Wang, Changwu Huang, Xin Yao. **An Explainable Feature Selection Approach for Fair Machine Learning**[C]//International Conference on Artificial Neural Networks. Cham: Springer Nature Switzerland, 2023: 75-86.
+- **Zhi Yang**, Ziming Wang, Changwu Huang, Xin Yao. **Towards Private and Fair Machine Learning: Group-Specific Differentially Private Stochastic Gradient Descent with Threshold Optimization**[C]//The International Conference on Neural Information Processing, 2024(accepted). -->
 
 Awards & Scholarships
 ------
