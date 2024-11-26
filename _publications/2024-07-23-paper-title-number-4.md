@@ -3,7 +3,7 @@ title: "Towards Private and Fair Machine Learning: Group-Specific Differentially
 collection: publications
 category: conferences
 permalink: /publication/2024-7-23-paper-title-number-4
-excerpt: 'The paper simultaneously addresses the fairness issues at two different levels in the differential privacy model.'
+excerpt: 'Existing studies primarily address fairness issues in differentially private models in isolation. To bridge this gap, we propose a group-specific DP stochastic gradient descent (DP-SGD) training mechanism with classification threshold optimization, which simultaneously tackles both accuracy and outcome fairness challenges in differentially private models.'
 date: 2024-7-23
 venue: ' The International Conference on Neural Information Processing (ICONIP)'
 slidesurl: 'http://ruayz.github.io/files/slide_iconip.pdf'
