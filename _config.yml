@@ -8,9 +8,9 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Zhi Yang/Personal Homepage"#"Your Name / Site Title"
+title                    : "Homepage"  #"Your Name / Site Title"
 title_separator          : "-"
-name                     : &name "Zhi Yang"
+name                     : &name "Zhi Yang (阳芷)"
 description              : &description "personal description"
 url                      : https://ruayz.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
