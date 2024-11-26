@@ -6,9 +6,9 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I'm Zhi Yang, a second-year undergraduate student at the Department of Computer Science and Engineering, [Southern University of Science and Technology(SUSTech)](https://www.sustech.edu.cn/). My research interest includes trustworthy machine learning,tipiacally about explainability, privacy and fairness.
+I'm Zhi Yang, a second-year undergraduate student at the Department of Computer Science and Engineering, [Southern University of Science and Technology(SUSTech)](https://www.sustech.edu.cn/). My research interests lie in trustworthy machine learning, with a focus on explainability, privacy, and fairness.
 
-I am very fortunate to be advised by [Dr. Changwu Huang](https://faculty.sustech.edu.cn/?tagid=huangcw3&iscss=1&snapid=1&orderby=date&go=2) from SUSTech and [Prof. Xin Yao](https://www.ln.edu.hk/cht/po/people/professor-xin-yao) from Lingnan university.
+I am very fortunate to be advised by [Dr. Changwu Huang](https://faculty.sustech.edu.cn/?tagid=huangcw3&iscss=1&snapid=1&orderby=date&go=2) at SUSTech and [Prof. Xin Yao](https://www.ln.edu.hk/cht/po/people/professor-xin-yao) at Lingnan university.
 
 Education
 ------
