@@ -6,7 +6,7 @@ permalink: /publication/2024-7-23-paper-title-number-4
 excerpt: 'The paper simultaneously addresses the fairness issues at two different levels in the differential privacy model.'
 date: 2024-7-23
 venue: ' The International Conference on Neural Information Processing (ICONIP)'
-slidesurl: 'http://ruayz.github.io/files/slides_iconip.pdf'
+slidesurl: 'http://ruayz.github.io/files/slide_iconip.pdf'
 paperurl: 'http://ruayz.github.io/files/paper_iconip.pdf'
 citation: 'Zhi Yang, Changwu Huang, Xin Yao. Towards Private and Fair Machine Learning: Group-Specific Differentially Private Stochastic Gradient Descent with Threshold Optimization [C]// The International Conference on Neural Information Processing, Cham: Springer Nature Switzerland, 2024. (Recently Accepted)'
 ---
