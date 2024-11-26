@@ -1,7 +1,7 @@
 ---
 title: "An Explainable Feature Selection Approach for Fair Machine Learning"
 collection: publications
-category: conference papaer
+category: conferences
 permalink: /publication/2023-09-01-paper-title-number-3
 excerpt: 'In this work, we propose an explainable feature selection(ExFS) method to improve the fairness of ML by recursively eliminating features that contribute to unfairness based on the feature attribution explanations of the model’s predictions'
 date: 2023-9-01
