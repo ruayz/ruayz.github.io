@@ -14,9 +14,9 @@ Education
 ------
 - B.E. in Software Engineering, Yunnan University, 2019-2023.
   - GPA: 3.8/4.0
-  - Main classes: Advanced Mathematics, Probability and Statistics, Computer Networks, Software Engineering, etc.
+  - Main courses: Advanced Mathematics, Probability and Statistics, Computer Networks, Software Engineering, etc.
 - M.E. in Electronic Science and Technology, Southern University of Science and Technology, 2023-2026(expected).
-  - Main classes: Advanced Artificial Intelligence, Advanced Algorithms, Numerical Methods, Human Intelligence and Machine Intelligence etc.
+  - Main courses: Advanced Artificial Intelligence, Advanced Algorithms, Numerical Methods, Human Brain Intelligence and Machine Intelligence, etc.
 
 Publications
 ------
