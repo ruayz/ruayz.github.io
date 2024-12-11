@@ -26,7 +26,7 @@ Publications
 Awards & Scholarships
 ------
 - Excellent Teaching Assistant, 2024
-- Top Research Assistant Award, 2024
+- Top Research Assistant Scholarship, 2024
 - National Scholarship, 2022
 - National Silver Award, The 8th Internet Plus Innovation and Entrepreneurship Competition, 2022
 - University-Level First-Class Scholarship, 2021
