@@ -14,7 +14,7 @@ Education
 ------
 - B.E. in Software Engineering, Yunnan University, 2019-2023.
   - GPA: 3.8/4.0
-  - Main courses: Advanced Mathematics, Probability and Statistics, Computer Networks, Software Engineering, etc.
+  - Main courses: Advanced Mathematics, Discrete Mathematics, Probability and Statistics, Computer Networks, Software Engineering, etc.
 - M.E. in Electronic Science and Technology, Southern University of Science and Technology, 2023-2026(expected).
   - Main courses: Advanced Artificial Intelligence, Advanced Algorithms, Numerical Methods, Human Brain Intelligence and Machine Intelligence, etc.
 
@@ -25,9 +25,9 @@ Publications
 
 Awards & Scholarships
 ------
-- Excellent teaching assistant, 2024
-- Top research assistance reward, 2024
+- Excellent Teaching Assistant, 2024
+- Top Research Assistant Award, 2024
 - National Scholarship, 2022
-- The 8th Internet plus Innovation and Entrepreneurship Competition, National Silver Award, 2022
-- University-level first-class scholarship, 2021
-- University-level first-class scholarship, 2020
+- National Silver Award, The 8th Internet Plus Innovation and Entrepreneurship Competition, 2022
+- University-Level First-Class Scholarship, 2021
+- University-Level First-Class Scholarship, 2020
