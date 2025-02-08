@@ -3,7 +3,7 @@ title: "Towards Private and Fair Machine Learning: Group-Specific Differentially
 collection: publications
 category: conferences
 permalink: /publication/2024-7-23-paper-title-number-4
-excerpt: 'Existing studies primarily address fairness issues in differentially private models in isolation. To bridge this gap, we propose a group-specific DP stochastic gradient descent (DP-SGD) training mechanism with classification threshold optimization, which simultaneously tackles both accuracy and outcome fairness challenges in differentially private models.'
+excerpt: 'Recent research has explored the challenges of integrating differential privacy (DP) with group fairness. One line of work focuses on mitigating the accuracy disparity among sensitive groups introduced by DP, while another aims to maintain outcome fairness in DP-trained models. However, these objectives often conflict, and existing methods typically address them in isolation. To navigate this trade-off, I developed a group-specific Differentially private stochastic gradient descent (DP-SGD) training mechanism with classification threshold optimization. This approach jointly reduces accuracy disparity and achieves outcome fairness.'
 date: 2024-7-23
 venue: ' The International Conference on Neural Information Processing (ICONIP)'
 slidesurl: 'http://ruayz.github.io/files/slide_iconip.pdf'
