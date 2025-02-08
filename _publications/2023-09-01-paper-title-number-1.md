@@ -5,7 +5,7 @@ category: conferences
 permalink: /publication/2023-09-01-paper-title-number-1
 excerpt: 'In this work, we propose an explainable feature selection(ExFS) method to improve the fairness of ML by recursively eliminating features that contribute to unfairness based on the feature attribution explanations of the model’s predictions'
 date: 2023-9-01
-venue: 'International Conference on Artificial Neural Networks(ICANN)'
+venue: 'International Conference on Artificial Neural Networks (ICANN)'
 slidesurl: 'http://ruayz.github.io/files/slide_icann.pdf'
 paperurl: 'http://ruayz.github.io/files/paper_icann.pdf'
 citation: 'Zhi Yang, Ziming Wang, Changwu Huang, et al. An Explainable Feature Selection Approach for Fair Machine Learning. International Conference on Artificial Neural Networks. Cham: Springer Nature Switzerland, 2023: 75-86.'
