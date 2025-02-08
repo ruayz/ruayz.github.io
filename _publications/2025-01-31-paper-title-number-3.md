@@ -4,6 +4,7 @@ collection: publications
 category: conferences
 permalink: /publication/2025-01-31-paper-title-number-3
 excerpt: 'While privacy-aware and fair ML has advanced, the fairness of privacy protection remains underexplored. Compared to others, I defined a membership inference game to efficiently audit worst-case individual privacy risks, providing a more precise assessment of group privacy disparities. Furthermore, to address these disparities in DP-SGD, I developed a group-specific adaptive gradient clipping strategy, which reduces privacy risk imbalances while preserving DP guarantees, fostering the equitable deployment of AI systems.'
+venue: 'Manuscript under review'
 date: 2025-1-31
 paperurl: 'http://ruayz.github.io/files/paper_icml.pdf'
 ---
