@@ -12,16 +12,17 @@ I am very fortunate to be advised by [Dr. Changwu Huang](https://faculty.sustech
 
 Education
 ------
+- M.E. in Electronic Science and Technology, Southern University of Science and Technology, 2023-2026 (expected).
+  - Main courses: Advanced Artificial Intelligence, Advanced Algorithms, Numerical Methods, Human Brain Intelligence and Machine Intelligence, etc.
 - B.E. in Software Engineering, Yunnan University, 2019-2023.
   - GPA: 3.8/4.0
   - Main courses: Advanced Mathematics, Discrete Mathematics, Probability and Statistics, Computer Networks, Software Engineering, etc.
-- M.E. in Electronic Science and Technology, Southern University of Science and Technology, 2023-2026 (expected).
-  - Main courses: Advanced Artificial Intelligence, Advanced Algorithms, Numerical Methods, Human Brain Intelligence and Machine Intelligence, etc.
 
 Publications
 ------
-- **Zhi Yang**, Ziming Wang, Changwu Huang, Xin Yao. **An Explainable Feature Selection Approach for Fair Machine Learning.** International Conference on Artificial Neural Networks. Cham: Springer Nature Switzerland, 2023: 75-86.
+- **Zhi Yang**, Ziming Wang, Changwu Huang, Xin Yao. On the Fairness of Privacy Protection: Measuring and Mitigating the Disparity of Group Privacy Risk for Differentially Private Machine Learning. Manuscript under review, 2025.
 - **Zhi Yang**, Changwu Huang, Xin Yao. **Towards Private and Fair Machine Learning: Group-Specific Differentially Private Stochastic Gradient Descent with Threshold Optimization.** The International Conference on Neural Information Processing, 2024 (accepted).
+- - **Zhi Yang**, Ziming Wang, Changwu Huang, Xin Yao. **An Explainable Feature Selection Approach for Fair Machine Learning.** International Conference on Artificial Neural Networks. Cham: Springer Nature Switzerland, 2023: 75-86.
 
 Awards & Scholarships
 ------
