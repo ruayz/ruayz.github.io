@@ -3,6 +3,7 @@ title: "On the Fairness of Privacy Protection: Measuring and Mitigating the Disp
 collection: publications
 category: conferences
 permalink: /publication/2025-01-31-paper-title-number-3
+venue: 'Manuscript'
 excerpt: 'While privacy-aware and fair ML has advanced, the fairness of privacy protection remains underexplored. Compared to others, I defined a membership inference game to efficiently audit worst-case individual privacy risks, providing a more precise assessment of group privacy disparities. Furthermore, to address these disparities in DP-SGD, I developed a group-specific adaptive gradient clipping strategy, which reduces privacy risk imbalances while preserving DP guarantees, fostering the equitable deployment of AI systems.'
 paperurl: 'http://ruayz.github.io/files/paper_icml.pdf'
 ---
