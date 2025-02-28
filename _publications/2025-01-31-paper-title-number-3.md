@@ -1,4 +1,3 @@
-<!--
 ---
 title: "On the Fairness of Privacy Protection: Measuring and Mitigating the Disparity of Group Privacy Risk for Differentially Private Machine Learning"
 collection: publications
@@ -9,4 +8,4 @@ paperurl: 'http://ruayz.github.io/files/paper_icml.pdf'
 ---
 
 Abstract: Although research on privacy and fairness in machine learning (ML) has made significant progress, the fairness of privacy protection across different subgroups remains underexplored. Experimental results show that existing ML and differentially private machine learning (DPML) algorithms exhibit unfair privacy leakage risks among various groups, highlighting the need for further research in this area. Current studies primarily assess the average-case privacy risk of individual data records, which can overestimate protections for certain data points and underestimate disparities between groups. To address this, we introduce a membership inference game that efficiently audits the worst-case privacy risk associated with individual data points, allowing for more effective measurement of unfairness by evaluating privacy risk parity across groups. Based on our assessment of group privacy risk parity, we propose a novel technique to mitigate inequities in privacy protection for DPML. Inspired by canaries in differential privacy auditing, we enhance existing DPML algorithms with an adaptive group-specific gradient clipping strategy. Extensive experiments demonstrate that our approach maintains the same privacy guarantees as traditional DPML algorithms while effectively reducing disparities in group privacy risks, and promoting the ethical and equitable deployment of AI systems.
--->
+
