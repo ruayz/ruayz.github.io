@@ -21,7 +21,7 @@ Education
 Publications
 ------
 - **Zhi Yang**, Changwu Huang, Xin Yao. *On the Fairness of Privacy Protection: Measuring and Mitigating the Disparity of Group Privacy Risk for Differentially Private Machine Learning.* Manuscript under review, 2025.
-- **Zhi Yang**, Changwu Huang, Xin Yao. *Towards Private and Fair Machine Learning: Group-Specific Differentially Private Stochastic Gradient Descent with Threshold Optimization.* The International Conference on Neural Information Processing (ICONIP), 2024 (accepted).
+- **Zhi Yang**, Changwu Huang, Xin Yao. *Towards Private and Fair Machine Learning: Group-Specific Differentially Private Stochastic Gradient Descent with Threshold Optimization.* International Conference on Neural Information Processing. Singapore: Springer Nature Singapore, 2024: 66-80.
 - **Zhi Yang**, Ziming Wang, Changwu Huang, Xin Yao. *An Explainable Feature Selection Approach for Fair Machine Learning.* International Conference on Artificial Neural Networks (ICANN). Cham: Springer Nature Switzerland, 2023: 75-86.
 
 Awards & Scholarships
