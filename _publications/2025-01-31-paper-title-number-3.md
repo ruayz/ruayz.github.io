@@ -4,7 +4,8 @@ collection: publications
 category: conferences
 permalink: /publication/2025-01-31-paper-title-number-3
 venue: 'Manuscript'
-excerpt: 'While privacy-aware and fair ML has advanced, the fairness of privacy protection remains underexplored. Compared to others, I defined a membership inference game to efficiently audit worst-case individual privacy risks, providing a more precise assessment of group privacy disparities. Furthermore, to address these disparities in DP-SGD, I developed a group-specific adaptive gradient clipping strategy, which reduces privacy risk imbalances while preserving DP guarantees, fostering the equitable deployment of AI systems.'
+excerpt: 'Summary: While fairness in conventional ML and differentially private ML (DPML) has been extensively studied, the fairness of privacy protection across groups remains underexplored. Existing methods assess group privacy risks using average-case measures, which may underestimate disparities. Worst-case auditing methods, though more accurate, are often computationally expensive.
+To address these limitations, we propose a novel membership inference game that efficiently approximates worst-case privacy risks, enabling stricter and more reliable group risk assessments. To further enhance fairness, we introduce a group-specific adaptive gradient clipping strategy for DP-SGD, inspired by canary mechanisms in privacy auditing. Experiments demonstrate that our method significantly reduces disparities in group privacy risks, advancing fairness in DPML.'
 paperurl: 'http://ruayz.github.io/files/paper_arxiv.pdf'
 ---
 
