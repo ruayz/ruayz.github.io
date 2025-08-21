@@ -3,7 +3,7 @@ title: "Towards Private and Fair Machine Learning: Group-Specific Differentially
 collection: publications
 category: conferences
 permalink: /publication/2024-7-23-paper-title-number-2
-excerpt: 'Summary: Recent research has highlighted the challenges of integrating differential privacy (DP) with group fairness. One line of work focuses on mitigating accuracy disparities across sensitive groups introduced by DP mechanisms, while another seeks to preserve outcome fairness in DP-trained models. However, these two objectives often conflict, and existing methods typically address them in isolation. To reconcile this trade-off, we propose a group-specific DP-SGD training framework combined with classification threshold optimization. Our approach jointly reduces accuracy disparity and achieves outcome fairness.'
+excerpt: 'Summary: Recent research has highlighted the challenges of integrating differential privacy (DP) with group fairness. One line of work focuses on mitigating accuracy disparities across sensitive groups introduced by DP mechanisms, while another seeks to preserve outcome fairness in DP-trained models. However, these two objectives often conflict, and existing methods typically address them in isolation. To tackle both problems simultaneously, we propose a group-specific DP-SGD training framework combined with classification threshold optimization. Our approach jointly reduces accuracy disparity and achieves outcome fairness.'
 date: 2024-7-23
 venue: 'The International Conference on Neural Information Processing (ICONIP)'
 slidesurl: 'http://ruayz.github.io/files/slide_iconip.pdf'
