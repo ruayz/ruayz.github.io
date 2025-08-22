@@ -6,13 +6,11 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I'm a second-year master's student in the Department of Computer Science and Engineering at [Southern University of Science and Technology (SUSTech)](https://www.sustech.edu.cn/), advised by [Dr. Changwu Huang](https://changwuhuang.github.io/), [Prof. Ke Tang](https://www.sustech.edu.cn/en/faculties/tangke.html) and [Prof. Xin Yao](https://scholar.google.co.uk/citations?user=UUtYPl4AAAAJ&hl=en) (Lingnan University).
+I'm Zhi Yang, a second-year master's student in the Department of Computer Science and Engineering at [Southern University of Science and Technology (SUSTech)](https://www.sustech.edu.cn/), advised by [Dr. Changwu Huang](https://changwuhuang.github.io/), [Prof. Ke Tang](https://www.sustech.edu.cn/en/faculties/tangke.html) and [Prof. Xin Yao](https://scholar.google.co.uk/citations?user=UUtYPl4AAAAJ&hl=en) (Lingnan University).
 
-During my graduate studies, my research has focused on trustworthy machine learning, particularly in the areas of explainability, privacy, and fairness. 
-Beyond my current research, I am also highly interested in trustworthy AI, large language models (LLMs), and their interdisciplinary applications across fields such as psychology and the social sciences.
+My graduate research centers on trustworthy machine learning, with a focus on explainability, privacy, and fairness. I am also highly interested in trustworthy large language models (LLMs) and their interdisciplinary applications across diverse domains.
 
-I am expected to graduate in Summer 2026, and I am currently seeking PhD opportunities.
-You can download my CV [here](http://ruayz.github.io/files/CV.pdf).
+I am expected to graduate in Summer 2026, and I am actively finding PHD positions! My CV can be download [here](http://ruayz.github.io/files/CV.pdf).
 
 Education
 ------
