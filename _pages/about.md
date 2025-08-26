@@ -14,10 +14,10 @@ I am expected to graduate in Summer 2026, and I am actively finding PhD position
 
 Education
 ------
-- M.E. in Computer Science and Technology, Southern University of Science and Technology, 2023-2026 (expected).
+- Master of Engineering in Computer Science and Engineering (Degree in Electronic Science and Technology), Southern University of Science and Technology, 2023-2026 (expected).
   - GPA: 3.5/4.0
   - Main courses: Advanced Artificial Intelligence, Advanced Algorithms, Numerical Methods, Human Brain Intelligence and Machine Intelligence, etc.
-- B.E. in Software Engineering, Yunnan University, 2019-2023.
+- Bachelor of Engineering in Software Engineering, Yunnan University, 2019-2023.
   - GPA: 3.8/4.0 (Top 2%)
   - Main courses: Advanced Mathematics, Discrete Mathematics, Probability and Statistics, Computer Networks, Software Engineering, etc.
 
