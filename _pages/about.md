@@ -6,7 +6,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I'm Zhi Yang, a second-year master's student in the Department of Computer Science and Engineering at [Southern University of Science and Technology (SUSTech)](https://www.sustech.edu.cn/), advised by [Dr. Changwu Huang](https://changwuhuang.github.io/), [Prof. Ke Tang](https://www.sustech.edu.cn/en/faculties/tangke.html) and [Prof. Xin Yao](https://scholar.google.co.uk/citations?user=UUtYPl4AAAAJ&hl=en) (Lingnan University).
+I'm Zhi Yang, a third-year master's student in the Department of Computer Science and Engineering at [Southern University of Science and Technology (SUSTech)](https://www.sustech.edu.cn/), advised by [Dr. Changwu Huang](https://changwuhuang.github.io/), [Prof. Ke Tang](https://www.sustech.edu.cn/en/faculties/tangke.html) and [Prof. Xin Yao](https://scholar.google.co.uk/citations?user=UUtYPl4AAAAJ&hl=en) (Lingnan University).
 
 My research centers on trustworthy machine learning, with a focus on explainability, privacy, and fairness. I am also highly interested in trustworthy large language models (LLMs) and their interdisciplinary applications across diverse domains.
 
