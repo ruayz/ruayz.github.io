@@ -29,7 +29,7 @@ Publications
 
 Research Experience
 ------
-- *Adaptive Personalized LLM for Multi-Turn Conversations*: Aims to develop a novel personalized LLM capable of dynamically adapting its responses to a user's demographic characteristics, evolving preferences, background knowledge, emotional state, communication style, and personality across multi-turn dialogues.
+- *Adaptive Personalized LLM for Multi-Turn Conversations*: Aims to develop a  personalized LLM capable of dynamically adapting its responses to a user's demographic characteristics, background knowledge, communication style, and personality across multi-turn dialogues.
 - *Multi-Agent Systems with LLMs*:
     - Investigated the impact of emotional prompts on agent behaviors in a multi-agent LLMs system across diverse network topologies, concluding that modern LLMs are robust to such stimuli, with no consistent topology-dependent variance.
     - Explored distilling multi-agent collaboration into a single LLM, aiming to enable efficient collective reasoning within a unified model.
