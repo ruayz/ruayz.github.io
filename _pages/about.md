@@ -10,7 +10,7 @@ I'm Zhi Yang, a third-year master's student in the Department of Computer Scienc
 
 My research centers on trustworthy machine learning, with a focus on explainability, privacy, and fairness. I am also highly interested in trustworthy large language models (LLMs) and their interdisciplinary applications across diverse domains.
 
-I am expected to graduate in Summer 2026, and I am actively finding PhD position! My CV can be download [here](http://ruayz.github.io/files/CV.pdf).
+I am a PhD applicant expecting to graduate in Summer 2026 and am actively seeking PhD opportunities. You can download my CV [here](http://ruayz.github.io/files/CV.pdf) and contact me directly via email at [zhiyangzzz1@gmail.com](mailto:zhiyangzzz1@gmail.com).
 
 Education
 ------
