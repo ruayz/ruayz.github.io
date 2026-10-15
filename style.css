@@ -438,6 +438,7 @@ h1 .cjk {
   align-self: start;           /* top of the photo level with the top of the text */
   margin-top: 4px;
   justify-self: end;
+  margin-right: 16px;          /* nudged in, so the tile behind it ends level with the text column */
 }
 /* the soft tile peeking out behind the photo */
 .hero-figure::before {
@@ -537,25 +538,6 @@ h3 {
   color: var(--accent);
   font-weight: 600;
 }
-
-/* News */
-.news li {
-  display: grid;
-  grid-template-columns: 5.75rem minmax(0, 1fr);
-  gap: 18px;
-  padding: 0.55rem 0;
-}
-.news li + li { border-top: 1px solid var(--rule); }
-.news time {
-  padding-top: 0.32em;
-  color: var(--ink-3);
-  font: 500 0.8125rem/1.5 var(--sans);
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-}
-.news li:first-child p { color: var(--ink); }
-.news li:first-child time { color: var(--accent); font-weight: 600; }
 
 /* Publications */
 .pub { padding: 1.5rem 0; }
@@ -939,6 +921,7 @@ html:not(.js) .dog:active .heart { opacity: 1; transition: none; }
 @media (max-width: 820px) {
   :root { --photo-w: clamp(196px, 28vw, 224px); }
   .hero { column-gap: 40px; }
+  .hero-figure { margin-right: 10px; }
   .hero-figure::before { transform: rotate(4deg) translate(9px, 5px); }
 }
 
@@ -976,9 +959,6 @@ html:not(.js) .dog:active .heart { opacity: 1; transition: none; }
   .tier-label { padding-top: 0; }
   .tags { gap: 8px; }
   .tags li { padding: 5px 12px 6px; font-size: 0.84rem; }
-
-  .news li { grid-template-columns: 1fr; gap: 0; padding: 0.6rem 0; }
-  .news time { padding-top: 0; }
 
   .entry-head { flex-direction: column; gap: 1px; }
   .honors li { flex-direction: column; gap: 0; }

@@ -6,7 +6,7 @@ at the bottom of the page).
 No build step. Push to GitHub and Pages serves it. `.nojekyll` must stay.
 
 ```
-index.html      all the text: bio, news, publications, projects, …
+index.html      all the text: bio, publications, projects, …
 style.css       colours, fonts, layout
 script.js       small interactions (theme switch, nav, copy, the dog)
 favicon.svg     browser-tab icon (Bernese face)
@@ -27,27 +27,14 @@ The "Copy" buttons next to the email addresses need a secure page: https,
 localhost, or a file opened directly. On other plain-http addresses they stay
 hidden and the addresses can still be selected and copied by hand.)
 
-## 添加新闻 · Add a news item
-
-In `index.html`, search for `id="news"`. Just below the heading there is a
-comment with a ready-made line. Copy it to the **top** of the list that starts
-with `<ol class="news"` (newest first) and edit the date and text:
-
-```html
-<li><time datetime="2026-11">Nov 2026</time><p>Paper accepted at …</p></li>
-```
-
-`datetime` is machine-readable (`2026`, `2026-11` or `2026-11-03`); the text
-between the tags is what people see.
-
 ## 添加论文 · Add a publication
 
 Search `index.html` for `id="publications"`. Copy the template from the comment
 above the list to the **top** of the list that starts with `<ol class="pubs"`.
 Things to change:
 
-- `id="pub-short-name"`: a short unique name, e.g. `pub-neurips26`. News items
-  and projects can link to it with `href="#pub-neurips26"`.
+- `id="pub-short-name"`: a short unique name, e.g. `pub-neurips26`. Projects
+  can link to it with `href="#pub-neurips26"`.
 - the badge (`<span class="badge">NeurIPS 2026</span>`), or for a preprint
   `<span class="badge badge-preprint">Preprint</span><span class="pub-year">2026</span>`
 - title, authors (keep `<strong class="me">Zhi Yang</strong>` so your name is
@@ -146,7 +133,7 @@ there is no tail thump or screen-reader message.
 ## 其他 · Other notes
 
 - **After editing `style.css` or `script.js`**: in the `<head>` of `index.html`,
-  raise the number in `style.css?v=3` / `script.js?v=3` (e.g. to `v=4`).
+  raise the number in `style.css?v=5` / `script.js?v=5` (e.g. to `v=6`).
   Browsers keep these files for about 10 minutes; a new number makes them
   fetch the new version at once instead of mixing new HTML with old styles.
 
