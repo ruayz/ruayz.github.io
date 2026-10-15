@@ -19,9 +19,9 @@
   --accent: #A3441D;
   --accent-tint: rgba(163, 68, 29, 0.08);
   --accent-line: rgba(163, 68, 29, 0.38);
-  --highlight: rgba(240, 165, 132, 0.36);
   --heart: #C4532C;
   --select: rgba(163, 68, 29, 0.18);
+  --highlight: rgba(240, 165, 132, 0.36);   /* the apricot highlighter under the tagline */
   --photo-tile: rgba(232, 144, 106, 0.40);   /* the apricot tile behind the photo */
   --photo-shadow: 0 1px 2px rgba(29, 34, 48, 0.05), 0 12px 32px -18px rgba(29, 34, 48, 0.30);
 
@@ -50,7 +50,7 @@
      corner of the picture stays out of the frame. */
   --photo-pos: 64% 38%;
   --photo-zoom: 1.12;
-  --photo-w: 304px;      /* width of the photo on wide screens */
+  --photo-w: 236px;      /* width of the photo on wide screens */
   --photo-r: 32px;       /* corner roundness */
   --measure: 44rem;
   --gutter: clamp(16px, 5vw, 32px);
@@ -72,9 +72,9 @@
     --accent: #F0A584;
     --accent-tint: rgba(240, 165, 132, 0.10);
     --accent-line: rgba(240, 165, 132, 0.42);
-    --highlight: rgba(240, 165, 132, 0.22);
     --heart: #F0A584;
     --select: rgba(240, 165, 132, 0.25);
+    --highlight: rgba(240, 165, 132, 0.22);
     --photo-tile: rgba(196, 117, 70, 0.42);
     --photo-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 14px 34px -20px rgba(0, 0, 0, 0.7);
     --bmd-coat: #272A36;
@@ -101,9 +101,9 @@
   --accent: #F0A584;
   --accent-tint: rgba(240, 165, 132, 0.10);
   --accent-line: rgba(240, 165, 132, 0.42);
-  --highlight: rgba(240, 165, 132, 0.22);
   --heart: #F0A584;
   --select: rgba(240, 165, 132, 0.25);
+  --highlight: rgba(240, 165, 132, 0.22);
   --photo-tile: rgba(196, 117, 70, 0.42);
   --photo-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 14px 34px -20px rgba(0, 0, 0, 0.7);
   --bmd-coat: #272A36;
@@ -303,9 +303,9 @@ main section[id], .pub[id], .entry[id] { scroll-margin-top: 1rem; }
 :root[data-theme="dark"] .theme-toggle .tt-asleep { display: inline; }
 
 /* ---------- Hero: text on the left, photo on the right ----------
-   Three parts: intro (kicker, name, tagline), figure (photo), body (lede,
-   links, email). Wide screens: the photo sits in the right column, centred
-   against the text. Phones (further down): intro, photo, body, stacked. */
+   Three parts: intro (kicker, name, tagline), figure (photo), body (links,
+   email addresses). Wide screens: the photo sits in the right column, its top
+   level with the top of the text. Phones (further down): intro, photo, body, stacked. */
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) var(--photo-w);
@@ -359,7 +359,7 @@ h1 .cjk {
   line-height: 1.5;
   text-wrap: pretty;
 }
-/* soft apricot highlighter under the three key words */
+/* a soft apricot highlighter under the tagline, line by line */
 .hl {
   padding: 0 0.12em;
   margin: 0 -0.06em;
@@ -368,15 +368,6 @@ h1 .cjk {
   box-decoration-break: clone;
   color: var(--ink);
 }
-
-.lede {
-  margin-top: 0.9rem;
-  color: var(--ink);
-  font-size: 1.08rem;
-  line-height: 1.55;
-  text-wrap: pretty;
-}
-
 .contact {
   display: grid;
   grid-template-columns: repeat(3, max-content);
@@ -403,12 +394,16 @@ h1 .cjk {
   stroke-linejoin: round;
 }
 
+.email-list {
+  display: inline-grid;        /* as wide as the longer address, so the Copy buttons line up */
+  gap: 5px;
+  margin-top: 0.7rem;
+}
 .email-line {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  gap: 4px 10px;
-  margin-top: 0.55rem;
+  gap: 4px 12px;
   color: var(--ink-3);
   font: 500 0.84rem/1.4 var(--sans);
   letter-spacing: 0.01em;
@@ -440,7 +435,8 @@ h1 .cjk {
   position: relative;
   isolation: isolate;          /* keeps the tile just behind the photo */
   width: var(--photo-w);
-  align-self: center;
+  align-self: start;           /* top of the photo level with the top of the text */
+  margin-top: 4px;
   justify-self: end;
 }
 /* the soft tile peeking out behind the photo */
@@ -941,14 +937,14 @@ html:not(.js) .dog:active .heart { opacity: 1; transition: none; }
 
 /* Tablets: keep two columns, shrink the photo a little */
 @media (max-width: 820px) {
-  :root { --photo-w: clamp(236px, 36vw, 284px); }
+  :root { --photo-w: clamp(196px, 28vw, 224px); }
   .hero { column-gap: 40px; }
   .hero-figure::before { transform: rotate(4deg) translate(9px, 5px); }
 }
 
 /* Phones: stack — name and tagline, then the photo (centred), then the rest */
 @media (max-width: 640px) {
-  :root { --photo-w: min(260px, 72vw); }
+  :root { --photo-w: min(230px, 64vw); }
   body { font-size: 1.0625rem; line-height: 1.6; }
 
   .hero {
@@ -969,7 +965,6 @@ html:not(.js) .dog:active .heart { opacity: 1; transition: none; }
   h1 { font-size: clamp(2.3rem, 11vw, 2.8rem); }
   h1 .cjk { font-size: 0.5em; }
   .tagline { margin-top: 0.85rem; font-size: 1.12rem; }
-  .lede { font-size: 1.0625rem; }
   .contact { display: grid; grid-template-columns: repeat(3, max-content); gap: 2px 22px; }
 
   .about { margin-top: 2.25rem; }

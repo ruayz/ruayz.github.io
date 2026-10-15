@@ -23,9 +23,9 @@ python3 -m http.server 8000
 ```
 
 Then open <http://localhost:8000/>. (Opening `index.html` directly also works.
-The "Copy" email button needs a secure page: https, localhost, or a file opened
-directly. On other plain-http addresses it stays hidden and the email address
-can still be selected and copied by hand.)
+The "Copy" buttons next to the email addresses need a secure page: https,
+localhost, or a file opened directly. On other plain-http addresses they stay
+hidden and the addresses can still be selected and copied by hand.)
 
 ## 添加新闻 · Add a news item
 
@@ -84,7 +84,7 @@ years uses `<span class="date">2027, 2026</span>` in place of the `<time>` part.
    ```css
    --photo-pos: 64% 38%;   /* x% y%: which part of the picture stays in view */
    --photo-zoom: 1.12;     /* 1 = whole height; bigger = zoom in */
-   --photo-w: 304px;       /* photo width on wide screens */
+   --photo-w: 236px;       /* photo width on wide screens */
    --photo-r: 32px;        /* corner roundness */
    ```
    A bigger first number moves the view to the right side of the photo, a bigger
@@ -158,5 +158,8 @@ there is no tail thump or screen-reader message.
   `prefers-color-scheme: dark` block and in `:root[data-theme="dark"]`, so
   change a dark colour in both places.
 - Everything works with JavaScript turned off (the theme switch and the Copy
-  button are then hidden, and the dog just lies at the end of the line).
+  buttons are then hidden, and the dog just lies at the end of the line).
+- **Email addresses**: shown under the links at the top of `index.html`
+  (search `email-list`); each line is one address with its Copy button. The
+  "Email" link above them opens the W&M address (`mailto:zyang23&#64;wm.edu`).
 - Respecting "reduce motion": all animation stops if the visitor asks for it.

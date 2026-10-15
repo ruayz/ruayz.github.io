@@ -152,35 +152,38 @@
     });
   }
 
-  /* ----- Copy the email address ----- */
-  var copyBtn = document.querySelector(".copy-btn");
-  var emailText = document.getElementById("email-text");
-  if (copyBtn && emailText && navigator.clipboard && window.isSecureContext) {
-    copyBtn.hidden = false;
-    var copyTimer = 0;
-    copyBtn.addEventListener("click", function () {
-      var done = function (ok) {
-        copyBtn.textContent = ok ? "Copied!" : "Select & copy";
-        copyBtn.classList.toggle("is-done", ok);
-        if (!ok) {
-          var range = document.createRange();
-          range.selectNodeContents(emailText);
-          var sel = window.getSelection();
-          sel.removeAllRanges();
-          sel.addRange(range);
-        }
-        announce(ok ? "Email address copied."
-                    : "Couldn't copy automatically. The address is selected; press Ctrl+C or ⌘C.");
-        clearTimeout(copyTimer);
-        copyTimer = setTimeout(function () {
-          copyBtn.textContent = "Copy";
-          copyBtn.classList.remove("is-done");
-        }, 1800);
-      };
-      navigator.clipboard.writeText(emailText.textContent.trim()).then(
-        function () { done(true); },
-        function () { done(false); }
-      );
+  /* ----- Copy an email address (one Copy button per address) ----- */
+  // Each button copies the address it is described by (aria-describedby).
+  if (navigator.clipboard && window.isSecureContext) {
+    Array.prototype.forEach.call(document.querySelectorAll(".copy-btn"), function (btn) {
+      var text = document.getElementById(btn.getAttribute("aria-describedby"));
+      if (!text) return;
+      btn.hidden = false;
+      var timer = 0;
+      btn.addEventListener("click", function () {
+        var done = function (ok) {
+          btn.textContent = ok ? "Copied!" : "Select & copy";
+          btn.classList.toggle("is-done", ok);
+          if (!ok) {
+            var range = document.createRange();
+            range.selectNodeContents(text);
+            var sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+          }
+          announce(ok ? "Email address copied."
+                      : "Couldn't copy automatically. The address is selected; press Ctrl+C or ⌘C.");
+          clearTimeout(timer);
+          timer = setTimeout(function () {
+            btn.textContent = "Copy";
+            btn.classList.remove("is-done");
+          }, 1800);
+        };
+        navigator.clipboard.writeText(text.textContent.trim()).then(
+          function () { done(true); },
+          function () { done(false); }
+        );
+      });
     });
   }
 
