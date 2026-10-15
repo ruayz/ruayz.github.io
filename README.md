@@ -1,75 +1,130 @@
-# Academic Pages
-**Academic Pages is a Github Pages template for academic websites.**
+# Zhi Yang · 个人主页 (ruayz.github.io)
 
-# Getting Started
+A plain static site: `index.html` (content), `style.css` (look), `script.js`
+(optional extras: theme switch, sticky nav, copy-email, and the Bernese who
+sits at the bottom of the page).
+No build step. Push to GitHub and Pages serves it. `.nojekyll` must stay.
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and add your content.
-1. Upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
-
-See more info at https://academicpages.github.io/
-
-## Running locally
-
-When you are initially working your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
-
-1. Clone the repository and made updates as detailed above.
-1. Make sure you have ruby-dev, bundler, and nodejs installed
-    
-    On most Linux distribution and [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/about) the command is:
-    ```bash
-    sudo apt install ruby-dev ruby-bundler nodejs
-    ```
-    On MacOS the commands are:
-    ```bash
-    brew install ruby
-    brew install node
-    gem install bundler
-    ```
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
-
-If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
-
-## Using Docker
-
-Working from a different OS, or just want to avoid installing dependencies? You can use the provided `Dockerfile` to build a container that will run the site for you if you have [Docker](https://www.docker.com/) installed.
-
-Start by build the container:
-
-```bash
-docker build -t jekyll-site .
+```
+index.html      all the text: bio, news, publications, projects, …
+style.css       colours, fonts, layout
+script.js       small interactions (theme switch, nav, copy, the dog)
+favicon.svg     browser-tab icon (Bernese face)
+404.html        shown for missing pages (e.g. old links from the previous site)
+images/         profile.jpg (800×800) and profile-400.jpg (same photo, 400×400)
+files/          CV.pdf, paper and slide PDFs
 ```
 
-Next, run the container:
+## 本地预览 · Preview locally
+
 ```bash
-docker run -p 4000:4000 --rm -v $(pwd):/usr/src/app jekyll-site
+cd path/to/this/folder
+python3 -m http.server 8000
 ```
 
-# Maintenance
+Then open <http://localhost:8000/>. (Opening `index.html` directly also works.
+The "Copy" email button needs a secure page: https, localhost, or a file opened
+directly. On other plain-http addresses it stays hidden and the email address
+can still be selected and copied by hand.)
 
-Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
+## 添加新闻 · Add a news item
 
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii) and additional maintainers would be welcomed.
+In `index.html`, search for `id="news"`. Just below the heading there is a
+comment with a ready-made line. Copy it to the **top** of the list that starts
+with `<ol class="news"` (newest first) and edit the date and text:
 
-## Bugfixes and enhancements
+```html
+<li><time datetime="2026-11">Nov 2026</time><p>Paper accepted at …</p></li>
+```
 
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of template to your fork as well.
+`datetime` is machine-readable (`2026`, `2026-11` or `2026-11-03`); the text
+between the tags is what people see.
 
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch.
+## 添加论文 · Add a publication
 
----
-<div align="center">
-    
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
-[![GitHub contributors](https://img.shields.io/github/contributors/academicpages/academicpages.github.io.svg)](https://github.com/academicpages/academicpages.github.io/graphs/contributors)
-[![GitHub release](https://img.shields.io/github/v/release/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/academicpages/academicpages.github.io?color=blue)](https://github.com/academicpages/academicpages.github.io/blob/master/LICENSE)
+Search `index.html` for `id="publications"`. Copy the template from the comment
+above the list to the **top** of the list that starts with `<ol class="pubs"`.
+Things to change:
 
-[![GitHub stars](https://img.shields.io/github/stars/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io)
-[![GitHub forks](https://img.shields.io/github/forks/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/fork)
-</div>
+- `id="pub-short-name"`: a short unique name, e.g. `pub-neurips26`. News items
+  and projects can link to it with `href="#pub-neurips26"`.
+- the badge (`<span class="badge">NeurIPS 2026</span>`), or for a preprint
+  `<span class="badge badge-preprint">Preprint</span><span class="pub-year">2026</span>`
+- title, authors (keep `<strong class="me">Zhi Yang</strong>` so your name is
+  emphasised), venue, one-line summary
+- links: put PDFs in `files/` and link them as `files/your_paper.pdf`
+
+## 添加项目 · Add a research project
+
+Search `index.html` for `id="projects"` and copy the template from the comment
+to the top of the list. Every project shows one status pill:
+`<span class="pill pill-live">Ongoing</span>`, or once it has ended
+`<span class="pill">Concluded</span>`. A thesis also gets
+`<span class="pill pill-note">M.Eng. thesis</span>`. Link to a paper on this
+page (Publications is above Projects, hence the ↑) instead of repeating its title:
+`<a class="meta-link" href="#pub-short-name">Paper (VENUE 2026)<span aria-hidden="true"> ↑</span></a>`.
+
+## 添加奖项 / 助教 / 学位 · Add an award, a teaching entry or a degree
+
+Search `index.html` for `id="honors"`, `id="teaching"` or `id="education"`.
+Each has a comment just below its heading with a ready-made entry. Copy it to
+the **top** of the list underneath and edit it. For an award, the grey detail
+in `<span class="muted">(…)</span>` is optional, and an award won in several
+years uses `<span class="date">2027, 2026</span>` in place of the `<time>` part.
+
+## 更换照片 · Swap the photo
+
+1. Replace `images/profile.jpg` with a square photo (800×800 is ideal).
+2. Re-make the small copy (macOS):
+   ```bash
+   sips -s format jpeg -z 400 400 images/profile.jpg --out images/profile-400.jpg
+   ```
+3. The rounded frame (slightly taller than wide, 11 : 12) crops the photo. To
+   choose what stays visible, edit these lines near the top of `style.css`:
+   ```css
+   --photo-pos: 64% 38%;   /* x% y%: which part of the picture stays in view */
+   --photo-zoom: 1.12;     /* 1 = whole height; bigger = zoom in */
+   --photo-w: 304px;       /* photo width on wide screens */
+   --photo-r: 32px;        /* corner roundness */
+   ```
+   A bigger first number moves the view to the right side of the photo, a bigger
+   second number moves it down. The current values keep the water bottle at the
+   lower-left corner of `profile.jpg` out of the frame; with a new photo,
+   `--photo-pos: 50% 40%` and `--photo-zoom: 1` are a good start. The tinted tile
+   behind the photo is `--photo-tile`: the light value is at the very top; the
+   dark value appears twice, in the `prefers-color-scheme: dark` block and in
+   `:root[data-theme="dark"]` just below it. Change both dark lines.
+4. If you change the file name, also update the `src` / `srcset` of
+   `<img class="portrait"` in the hero (that is the photo people see), plus
+   `og:image` / `twitter:image` and the JSON-LD `"image"` in the `<head>` of
+   `index.html`.
+
+## 更换简历 · Replace the CV
+
+Overwrite `files/CV.pdf` with the new file (same name). Nothing else to change.
+
+## 狗狗 · The dog
+
+The Bernese Mountain Dog sits on the footer line at the bottom right, with three
+paw prints leading up to it. By day it is awake; in the dark theme it is curled
+up asleep. When you scroll down to it, it comes alive for a few seconds (it
+blinks by day; by night it breathes and its z's drift), then rests; hovering
+over it or focusing it with the keyboard wakes it again. Click or tap it and a
+heart floats up and its tail wags. Its drawing is the `<button class="dog"` near
+the end of `index.html`. Its size is `--awake-h` / `--asleep-w` under "Footer"
+in `style.css`; phones use a smaller pair under `@media (max-width: 640px)`
+further down, so change both. To remove it, delete that `<button>…</button>`
+(the paws can stay).
+
+## 其他 · Other notes
+
+- **Footer date**: edit "Last updated: Oct 2026" at the bottom of `index.html`.
+- **Theme**: follows the visitor's system setting; the Bernese button in the top
+  right switches it and the choice is remembered.
+- **Colours** live at the top of `style.css` (`--accent` is the terracotta).
+  The light colours come first. Every dark colour is written twice, in the
+  `prefers-color-scheme: dark` block and in `:root[data-theme="dark"]`, so
+  change a dark colour in both places.
+- Everything works with JavaScript turned off (the theme switch and the Copy
+  button are then hidden, and the dog moves only while you hover over it).
+- Respecting "reduce motion": all animation stops if the visitor asks for it.
