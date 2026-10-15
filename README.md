@@ -1,8 +1,8 @@
 # Zhi Yang · 个人主页 (ruayz.github.io)
 
 A plain static site: `index.html` (content), `style.css` (look), `script.js`
-(optional extras: theme switch, sticky nav, copy-email, and the Bernese who
-sits at the bottom of the page).
+(optional extras: theme switch, sticky nav, copy-email, and the Bernese lying
+at the bottom of the page).
 No build step. Push to GitHub and Pages serves it. `.nojekyll` must stay.
 
 ```
@@ -105,16 +105,43 @@ Overwrite `files/CV.pdf` with the new file (same name). Nothing else to change.
 
 ## 狗狗 · The dog
 
-The Bernese Mountain Dog sits on the footer line at the bottom right, with three
-paw prints leading up to it. By day it is awake; in the dark theme it is curled
-up asleep. When you scroll down to it, it comes alive for a few seconds (it
-blinks by day; by night it breathes and its z's drift), then rests; hovering
-over it or focusing it with the keyboard wakes it again. Click or tap it and a
-heart floats up and its tail wags. Its drawing is the `<button class="dog"` near
-the end of `index.html`. Its size is `--awake-h` / `--asleep-w` under "Footer"
-in `style.css`; phones use a smaller pair under `@media (max-width: 640px)`
-further down, so change both. To remove it, delete that `<button>…</button>`
-(the paws can stay).
+A Bernese Mountain Dog lies at the right-hand end of the footer line, chin on
+its paw, with three faint paw prints leading up to it: it walked along the line
+and lay down. In the light theme its eyes are open; in the dark theme it is
+asleep (eyes closed, little z's). It is the same drawing in both themes, only
+the eyes and the z's change. While you are at the footer it takes a slow breath
+or two now and then (awake it blinks, asleep its z's drift; a few rounds, then
+it lies still); pointing at it or reaching it with the Tab key brings a couple
+more. Click or tap it and a heart floats up and its tail thumps. With "reduce
+motion" switched on nothing moves (a pet just shows the heart). With JavaScript
+off it simply lies there; pressing it still shows the heart for a moment, but
+there is no tail thump or screen-reader message.
+
+- **Size**: `--dog-w` under "Footer" in `style.css` (the width of the drawing,
+  about 101px; its height follows). Phones use a smaller value
+  (`--dog-w: 89.175px`) under `@media (max-width: 640px)` further down, so
+  change both. If you make it much bigger, also raise the `height` of
+  `.footer-ground` (90px, and 82px on phones) so the heart still has room
+  above it.
+- **Breathing speed**: `--breath-time` (5.2s for one breath, with one blink in
+  it when awake) in `style.css`, next to the breathing animations.
+- **Eyes**: the open eye is `<g class="eye-open">` and the closed one
+  `<path class="lid">`, both in the dog's head in `index.html`. Which shows is
+  set by `--dog-awake` / `--dog-asleep` with the theme colours at the top of
+  `style.css` (to keep it asleep in both themes, set `--dog-awake: none` and
+  `--dog-asleep: inline` in the light block too).
+- **Colours**: the `--bmd-*` colours at the top of `style.css`. Most of them
+  also colour the little dog on the theme switch in the top right; only
+  `--bmd-outline` (the outline: a soft slate by day, a lighter blue-grey after
+  dark) and `--bmd-soft` (the faint fur lines) are the footer dog's alone. The
+  heart is `--heart`. Every dark colour is written twice, so change both.
+- **Remove it**: to remove the dog and its paw prints, delete the whole
+  `<div class="footer-ground">…</div>` in the footer of `index.html` (the strip
+  above the footer line goes with it). To remove only the dog, delete the
+  `<button class="dog" …>…</button>` inside it; to remove only the paw prints,
+  delete the `<div class="paw-trail" …>…</div>`. Nothing else needs to change.
+- **The drawing** is the `<svg class="dog-art">` inside that button. It is
+  hand-tuned artwork; there is no need to edit it.
 
 ## 其他 · Other notes
 
@@ -126,5 +153,5 @@ further down, so change both. To remove it, delete that `<button>…</button>`
   `prefers-color-scheme: dark` block and in `:root[data-theme="dark"]`, so
   change a dark colour in both places.
 - Everything works with JavaScript turned off (the theme switch and the Copy
-  button are then hidden, and the dog moves only while you hover over it).
+  button are then hidden, and the dog just lies at the end of the line).
 - Respecting "reduce motion": all animation stops if the visitor asks for it.
