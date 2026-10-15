@@ -1,18 +1,14 @@
 /* Progressive enhancement only: the page is complete without this file.
-   Theme toggle · copy email · sticky nav · the footer paws and the Bernese
-   who sits at the end of them (pet it: a heart and a happy tail). */
+   Theme toggle · copy email · the dog in the footer · sticky nav. */
 (function () {
   "use strict";
 
   var root = document.documentElement;
+  root.classList.add("js");   // tells style.css that this file is running (used by the footer dog)
   var mm = function (q) { return window.matchMedia ? window.matchMedia(q) : { matches: false }; };
   var darkMQ = mm("(prefers-color-scheme: dark)");
   var motionMQ = mm("(prefers-reduced-motion: reduce)");
   var reduced = function () { return !!motionMQ.matches; };
-  var onChange = function (mq, fn) {
-    if (mq.addEventListener) mq.addEventListener("change", fn);
-    else if (mq.addListener) mq.addListener(fn);
-  };
 
   function theme() {
     var t = root.getAttribute("data-theme");
@@ -30,8 +26,8 @@
 
   /* ----- Theme toggle ----- */
   var toggle = document.querySelector(".theme-toggle");
-  var dog = document.querySelector(".dog");
   var themeMetas = document.querySelectorAll('meta[name="theme-color"]');
+  var dogBtn = document.querySelector(".dog");   // the footer dog: awake by day, asleep after dark
 
   function sync() {
     var dark = theme() === "dark";
@@ -43,12 +39,9 @@
       toggle.setAttribute("aria-pressed", dark ? "true" : "false");
       toggle.title = dark ? "Lights on" : "Lights off";
     }
-    // The title is the dog button's accessible name (and its tooltip).
-    if (dog) dog.title = dark ? "Pet the sleeping dog" : "Pet the dog";
+    // its title is the dog button's name (and tooltip)
+    if (dogBtn) dogBtn.title = dark ? "Pet the sleeping dog" : "Pet the dog";
   }
-
-  // Set further down: lets the footer dog stir if it is on screen when the theme changes.
-  var stirIfSeen = function () {};
 
   if (toggle) {
     toggle.hidden = false;
@@ -57,10 +50,10 @@
       root.setAttribute("data-theme", next);
       try { localStorage.setItem("theme", next); } catch (e) { /* storage unavailable */ }
       sync();
-      stirIfSeen();
     });
   }
-  onChange(darkMQ, function () { sync(); stirIfSeen(); });
+  if (darkMQ.addEventListener) darkMQ.addEventListener("change", sync);
+  else if (darkMQ.addListener) darkMQ.addListener(sync);
   sync();
 
   /* ----- Short messages for screen readers (copy email, pet the dog) ----- */
@@ -72,128 +65,128 @@
     setTimeout(function () { status.textContent = msg; }, 60);
   }
 
-  /* ----- The Bernese in the footer: pet, blink, look ----- */
-  // A single friendly wag (light theme only); the footer paws call it once they have walked in.
-  var sayHello = function () {};
+  /* ----- The Bernese lying on the footer line ----- */
+  // While the footer is on screen it takes a slow breath or two (awake it
+  // blinks; asleep its z's drift), lies still for a few seconds, and again:
+  // a few rounds each time you reach the footer, then it just lies there. Pointing at it or reaching it
+  // with Tab brings a couple more breaths. Petting it shows a heart and thumps
+  // its tail, and it stops the rounds for the rest of the visit.
+  // style.css draws all of this, including how long a breath takes; here we
+  // only add and remove its classes.
+  var dog = document.querySelector(".dog");
+  var chest = dog && dog.querySelector(".s-breathe");   // the part that breathes
+  if (chest) {
+    var ROUNDS = 6;     // rounds of breathing each time you reach the footer
+    var seen = false, petted = false, rounds = 0;
+    var breaths = 0, taken = 0, nextTimer = 0, petTimer = 0, saidAt = 0;
+    var now = function () { return Date.now() / 1000; };
 
-  if (dog) {
-    var head = dog.querySelector(".dog-head");
-    var petTimer = 0;
-
-    dog.addEventListener("click", function () {
-      dog.classList.remove("is-petted", "is-hello");
-      void dog.getBoundingClientRect(); // restart the animations
-      dog.classList.add("is-petted");   // heart + faster tail wag (see style.css)
-      clearTimeout(petTimer);
-      petTimer = setTimeout(function () { dog.classList.remove("is-petted"); }, 1600);
-      announce(theme() === "dark" ? "The sleeping dog wags its tail." : "The dog wags its tail.");
-    });
-
-    sayHello = function () {
-      if (reduced() || theme() === "dark" || dog.classList.contains("is-petted")) return;
-      dog.classList.add("is-hello");
-      setTimeout(function () { dog.classList.remove("is-hello"); }, 1100);
+    var stopBreathing = function () {
+      clearTimeout(nextTimer);
+      dog.classList.remove("is-stirring");
+      breaths = 0;
     };
-
-    // A few seconds of idle life each time the dog comes into view (or the
-    // theme changes while it is in view): by day it blinks twice, by night it
-    // breathes and its z's drift (.is-stirring in style.css). Then it rests,
-    // so nothing moves by itself for more than five seconds.
-    var stirTimers = [];
-    var later = function (fn, ms) { stirTimers.push(setTimeout(fn, ms)); };
-    function blink(ms) {
-      dog.classList.add("is-blinking");
-      later(function () { dog.classList.remove("is-blinking"); }, ms);
-    }
-    function rest() {
-      stirTimers.forEach(clearTimeout);
-      stirTimers = [];
-      dog.classList.remove("is-stirring", "is-blinking");
-    }
-    function stir() {
-      rest();
-      if (reduced() || document.hidden) return;
-      if (theme() === "dark") {
-        void dog.getBoundingClientRect(); // restart the animations
+    // n breaths from now (a breath already under way counts as one)
+    var breathe = function (n) {
+      if (!seen || reduced() || document.hidden) return;
+      clearTimeout(nextTimer);
+      if (!breaths) {
+        taken = 0;
+        void dog.offsetWidth;   // so the first breath starts from the beginning
         dog.classList.add("is-stirring");
-        later(function () { dog.classList.remove("is-stirring"); }, 4700);
-      } else {
-        later(function () { blink(130); }, 1700 + Math.random() * 500);
-        later(function () {
-          blink(130);
-          later(function () { blink(110); }, 300);
-        }, 3600 + Math.random() * 500);
       }
-    }
+      breaths = Math.max(breaths, taken + n);
+      dog.style.setProperty("--breaths", String(breaths));   // style.css plays this many
+    };
+    // Count the breaths as they finish. After the last one: rest a few
+    // seconds, then the next round (one breath or two).
+    chest.addEventListener("animationiteration", function (e) {
+      if (e.target === chest) taken++;   // (not the tail's thump, which sits inside it)
+    });
+    chest.addEventListener("animationend", function (e) {
+      if (e.target !== chest) return;
+      stopBreathing();
+      if (!petted && ++rounds < ROUNDS) {
+        nextTimer = setTimeout(function () { breathe(rounds % 2 ? 1 : 2); }, 6000 + 4000 * Math.random());
+      }
+    });
+
+    // The footer comes into view (or goes away again).
     if ("IntersectionObserver" in window) {
-      var dogSeen = false;
       new IntersectionObserver(function (entries) {
-        var seen = entries[0].isIntersecting && entries[0].intersectionRatio >= 0.59; // mostly on screen
-        if (seen && !dogSeen) stir();
-        else if (!seen) rest();
-        dogSeen = seen;
-      }, { threshold: 0.6 }).observe(dog);
-      stirIfSeen = function () { if (dogSeen) stir(); else rest(); };
+        var e = entries[entries.length - 1];
+        var inView = e.isIntersecting && e.intersectionRatio >= 0.55;
+        if (inView === seen) return;
+        seen = inView;
+        stopBreathing();
+        rounds = 0;
+        if (seen && !petted) breathe(2);
+      }, { threshold: 0.55 }).observe(dog.parentNode);
     }
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) stopBreathing();
+      else if (!petted && rounds < ROUNDS) breathe(1);
+    });
 
-    // On desktops with a mouse: the head tilts a little toward the cursor.
-    var fine = mm("(hover: hover) and (pointer: fine)");
-    var mx = 0, frame = 0;
-    function look() {
-      frame = 0;
-      var r = dog.getBoundingClientRect();
-      var dx = mx - (r.left + r.width / 2);
-      var deg = Math.max(-6, Math.min(6, dx / 90));
-      head.style.setProperty("--look", deg.toFixed(2) + "deg");
-    }
-    function onMove(e) {
-      mx = e.clientX;
-      if (!frame) frame = requestAnimationFrame(look);
-    }
-    function setupLook() {
-      window.removeEventListener("pointermove", onMove);
-      if (head && fine.matches && !reduced()) {
-        window.addEventListener("pointermove", onMove, { passive: true });
-      } else if (head) {
-        head.style.removeProperty("--look");
-      }
-    }
-    setupLook();
-    onChange(fine, setupLook);
-    onChange(motionMQ, setupLook);
-  }
+    dog.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") breathe(2); });
+    dog.addEventListener("focus", function () {
+      var kb = true;
+      try { kb = dog.matches(":focus-visible"); } catch (err) { /* older browser: treat as keyboard */ }
+      if (kb) breathe(2);
+    });
 
-  /* ----- Copy the email address ----- */
-  var copyBtn = document.querySelector(".copy-btn");
-  var emailText = document.getElementById("email-text");
-  if (copyBtn && emailText && navigator.clipboard && window.isSecureContext) {
-    copyBtn.hidden = false;
-    var copyTimer = 0;
-    copyBtn.addEventListener("click", function () {
-      var done = function (ok) {
-        copyBtn.textContent = ok ? "Copied!" : "Select & copy";
-        copyBtn.classList.toggle("is-done", ok);
-        if (!ok) {
-          var range = document.createRange();
-          range.selectNodeContents(emailText);
-          var sel = window.getSelection();
-          sel.removeAllRanges();
-          sel.addRange(range);
-        }
-        announce(ok ? "Email address copied."
-                    : "Couldn't copy automatically. The address is selected; press Ctrl+C or ⌘C.");
-        clearTimeout(copyTimer);
-        copyTimer = setTimeout(function () {
-          copyBtn.textContent = "Copy";
-          copyBtn.classList.remove("is-done");
-        }, 1800);
-      };
-      navigator.clipboard.writeText(emailText.textContent.trim()).then(
-        function () { done(true); },
-        function () { done(false); }
-      );
+    // Holding Enter down repeats the key; one press is one pet.
+    dog.addEventListener("keydown", function (e) {
+      if (e.repeat && (e.key === "Enter" || e.key === " ")) e.preventDefault();
+    });
+    dog.addEventListener("click", function () {
+      petted = true;
+      clearTimeout(nextTimer);
+      dog.classList.remove("is-petted");
+      void dog.offsetWidth;   // restart the heart if it is still floating
+      dog.classList.add("is-petted");
+      clearTimeout(petTimer);
+      petTimer = setTimeout(function () { dog.classList.remove("is-petted"); }, 1700);
+      // pet it again and again and a screen reader hears it at most every 2 seconds
+      if (now() - saidAt > 2) { saidAt = now(); announce(theme() === "dark" ? "The sleeping dog wags its tail." : "The dog wags its tail."); }
     });
   }
+
+  /* ----- Copy an email address (one Copy button per address) ----- */
+  // Each button copies the address it is described by (aria-describedby).
+  if (navigator.clipboard && window.isSecureContext) {
+    Array.prototype.forEach.call(document.querySelectorAll(".copy-btn"), function (btn) {
+      var text = document.getElementById(btn.getAttribute("aria-describedby"));
+      if (!text) return;
+      btn.hidden = false;
+      var timer = 0;
+      btn.addEventListener("click", function () {
+        var done = function (ok) {
+          btn.textContent = ok ? "Copied!" : "Select & copy";
+          btn.classList.toggle("is-done", ok);
+          if (!ok) {
+            var range = document.createRange();
+            range.selectNodeContents(text);
+            var sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+          }
+          announce(ok ? "Email address copied."
+                      : "Couldn't copy automatically. The address is selected; press Ctrl+C or ⌘C.");
+          clearTimeout(timer);
+          timer = setTimeout(function () {
+            btn.textContent = "Copy";
+            btn.classList.remove("is-done");
+          }, 1800);
+        };
+        navigator.clipboard.writeText(text.textContent.trim()).then(
+          function () { done(true); },
+          function () { done(false); }
+        );
+      });
+    });
+  }
+
 
   /* ----- Sticky header hairline + current section in the nav ----- */
   var header = document.querySelector(".site-header");
@@ -314,21 +307,5 @@
     nav.addEventListener("scroll", fade, { passive: true });
     window.addEventListener("resize", fade);
     fade();
-  }
-
-  /* ----- Footer: the three paws step in toward the dog, then it wags hello ----- */
-  var trail = document.querySelector(".paw-trail");
-  if (trail && "IntersectionObserver" in window && !reduced()) {
-    trail.classList.add("is-waiting");
-    var pawIO = new IntersectionObserver(function (entries) {
-      if (!entries[0].isIntersecting) return;
-      pawIO.disconnect();
-      trail.classList.add("is-walking");
-      requestAnimationFrame(function () {
-        requestAnimationFrame(function () { trail.classList.remove("is-waiting"); });
-      });
-      setTimeout(sayHello, 1150); // just after the last paw lands
-    }, { threshold: 1 });
-    pawIO.observe(trail);
   }
 })();
