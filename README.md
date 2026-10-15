@@ -145,6 +145,11 @@ there is no tail thump or screen-reader message.
 
 ## 其他 · Other notes
 
+- **After editing `style.css` or `script.js`**: in the `<head>` of `index.html`,
+  raise the number in `style.css?v=3` / `script.js?v=3` (e.g. to `v=4`).
+  Browsers keep these files for about 10 minutes; a new number makes them
+  fetch the new version at once instead of mixing new HTML with old styles.
+
 - **Footer date**: edit "Last updated: Oct 2026" at the bottom of `index.html`.
 - **Theme**: follows the visitor's system setting; the Bernese button in the top
   right switches it and the choice is remembered.
