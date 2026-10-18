@@ -33,10 +33,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500,50&amp;family=Newsreader:ital,wght@0,400..600;1,400&amp;display=swap">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=8">
 
 <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
-<script src="script.js?v=5" defer></script>
+<script src="script.js?v=8" defer></script>
 
 <script type="application/ld+json">
 {
@@ -110,8 +110,8 @@
   <div class="wrap header-inner">
     <nav class="site-nav" aria-label="Sections">
       <ul>
-        <li><a href="#publications">Publications</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#publications">Publications</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#honors">Honors</a></li>
         <li><a href="#teaching">Teaching</a></li>
@@ -180,46 +180,101 @@
         <li><a href="files/CV.pdf"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>CV (PDF)</a></li>
         <li><a href="https://github.com/ruayz"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m8.5 8-4 4 4 4M15.5 8l4 4-4 4M13.4 5.5l-2.8 13"/></svg>GitHub</a></li>
       </ul>
-      <!-- email addresses as text, so they can be copied (the Copy buttons appear only with JavaScript) -->
-      <ul class="email-list" role="list" aria-label="Email addresses">
+      <!-- the email address as text, so it can be copied (the Copy button appears only with JavaScript) -->
+      <ul class="email-list" role="list" aria-label="Email address">
         <li class="email-line"><span class="email-text" id="email-wm">zyang23&#64;wm.edu</span><button class="copy-btn" type="button" aria-describedby="email-wm" hidden>Copy</button></li>
-        <li class="email-line"><span class="email-text" id="email-gmail">zhiyangzzz1&#64;gmail.com</span><button class="copy-btn" type="button" aria-describedby="email-gmail" hidden>Copy</button></li>
       </ul>
     </div>
   </section>
 
   <section class="about" aria-labelledby="about-title">
     <h2 id="about-title" class="sr-only">About</h2>
-    <p>My research centers on trustworthy AI, multimodal learning and interactive AI systems, with a focus on privacy, fairness and explainability. I study how privacy protection and its costs are distributed across groups — for example, whether differentially private training exposes some subgroups to higher privacy risk than others — and how to measure and mitigate such disparities. I am also interested in trustworthy large language models and vision-language models, including LLM personalization, multi-agent LLM systems, and how redundant visual information affects multimodal reasoning.</p>
-    <p>Before W&amp;M, I received my M.Eng. in Computer Science from the Southern University of Science and Technology (SUSTech), where I was advised by <a href="https://changwuhuang.github.io/">Dr. Changwu Huang</a>, <a href="https://www.sustech.edu.cn/en/faculties/tangke.html">Prof. Ke Tang</a> and <a href="https://scholar.google.co.uk/citations?user=UUtYPl4AAAAJ&amp;hl=en">Prof. Xin Yao</a>, and my B.Eng. in Software Engineering from Yunnan University.</p>
+    <p>I am a first-year Ph.D. student in the Department of Data Science at <strong>William &amp; Mary</strong>, advised by <a href="https://jd92.wang/">Prof. Jindong Wang</a>.</p>
+    <p>My research focuses on <strong>multimodal AI and trustworthy machine learning</strong>, with particular interests in <strong>streaming and interactive multimodal systems</strong>. I am currently investigating how streaming adaptation affects vision-language models’ visual understanding, temporal reasoning, robustness, and safety. More broadly, I am interested in developing reliable and effective multimodal AI systems for real-world applications.</p>
+    <p>Previously, my research focused on privacy, fairness, and explainability in machine learning, particularly measuring and mitigating disparities in privacy risks and model performance across different demographic groups.</p>
+    <p>Before joining William &amp; Mary, I received my M.Eng. in Computer Science from the <strong>Southern University of Science and Technology (SUSTech)</strong>, where I was advised by <a href="https://changwuhuang.github.io/">Dr. Changwu Huang</a>, <a href="https://www.sustech.edu.cn/en/faculties/tangke.html">Prof. Ke Tang</a>, and <a href="https://scholar.google.co.uk/citations?user=UUtYPl4AAAAJ&amp;hl=en">Prof. Xin Yao</a>. I received my B.Eng. in Software Engineering from <strong>Yunnan University</strong>.</p>
   </section>
 
   <section id="research" aria-labelledby="research-title">
     <h2 id="research-title">Research interests</h2>
+    <!-- One row per area: the area name, then its specific topics. Copy a whole <div class="tag-tier"> to add an area (give it a new id). -->
     <div class="tag-tiers">
       <div class="tag-tier">
-        <p class="tier-label" id="tier-core">Core</p>
-        <ul class="tags tags-core" role="list" aria-labelledby="tier-core">
-          <li>Trustworthy AI</li>
-          <li>Multimodal learning</li>
-          <li>Interactive AI systems</li>
+        <p class="tier-label" id="area-multimodal">Multimodal AI</p>
+        <ul class="tags" role="list" aria-labelledby="area-multimodal">
+          <li>Vision-Language Models</li>
+          <li>Streaming &amp; Interactive AI</li>
         </ul>
       </div>
       <div class="tag-tier">
-        <p class="tier-label" id="tier-also">Also</p>
-        <ul class="tags" role="list" aria-labelledby="tier-also">
-          <li>Differential privacy &amp; privacy auditing</li>
-          <li>Algorithmic fairness</li>
-          <li>Explainable AI</li>
-          <li>Trustworthy LLMs</li>
-          <li>Vision-language models</li>
-          <li>LLM personalization</li>
-          <li>Multi-agent LLM systems</li>
+        <p class="tier-label" id="area-trustworthy">Trustworthy AI</p>
+        <ul class="tags" role="list" aria-labelledby="area-trustworthy">
+          <li>Safety</li>
+          <li>Robustness</li>
+          <li>Fairness</li>
+          <li>Privacy</li>
+        </ul>
+      </div>
+      <div class="tag-tier">
+        <p class="tier-label" id="area-understanding">Model Understanding &amp; Adaptation</p>
+        <ul class="tags" role="list" aria-labelledby="area-understanding">
+          <li>Model Evaluation</li>
+          <li>Post-training Analysis</li>
+          <li>LLM Personalization</li>
         </ul>
       </div>
     </div>
   </section>
 
+
+  <section id="projects" aria-labelledby="projects-title">
+    <h2 id="projects-title">Research projects</h2>
+    <!-- To add a project: copy this block to the TOP of the list and edit it.
+         <li class="entry" id="proj-short-name">
+           <div class="entry-head"><h3>Project Title</h3><p class="when">Jan 2027 – present</p></div>
+           <p class="entry-meta"><span class="pill pill-live">Ongoing</span></p>
+           <p class="entry-body">One or two sentences about the project.</p>
+         </li>
+         Every project shows one status: Ongoing, or once it has ended <span class="pill">Concluded</span>.
+         Thesis?  also add <span class="pill pill-note">M.Eng. thesis</span>.
+         Has a paper below?  add <a class="meta-link" href="#pub-short-name">Paper (VENUE 2026)<span aria-hidden="true"> ↓</span></a>
+         Past work with a paper below can use the short form (class="entry entry-compact", no description).
+    -->
+    <ul class="entries" role="list">
+      <li class="entry" id="proj-streaming-multimodal">
+        <div class="entry-head"><h3>Understanding and Evaluating Streaming Multimodal Models</h3><p class="when">Sep 2026 – present</p></div>
+        <p class="entry-meta"><span class="pill pill-live">Ongoing</span></p>
+        <p class="entry-body">Investigating how streaming adaptation affects the capabilities and reliability of vision-language models. This project systematically compares streaming models with their offline counterparts across image and video understanding tasks, examining changes in visual perception, temporal reasoning, robustness, safety, and fairness. We further study how streaming post-training, memory mechanisms, and interaction patterns contribute to these changes.</p>
+      </li>
+      <li class="entry" id="proj-visual-redundancy">
+        <div class="entry-head"><h3>Impact of Visual Redundancy on Multimodal Reasoning</h3><p class="when">Jan 2025 – May 2026</p></div>
+        <p class="entry-meta"><span class="pill">Concluded</span></p>
+        <p class="entry-body">Investigated the impact of visual redundancy on multimodal reasoning through an exhaustive patch-level ablation study, partitioning images into 3&nbsp;×&nbsp;3 grids and evaluating all 512 possible patch combinations. Observed that a single patch was often sufficient for correct predictions, while additional visual information could lead to incorrect answers, revealing a non-monotonic relationship between visual context and VLM performance.</p>
+      </li>
+      <li class="entry" id="proj-llm-personalization">
+        <div class="entry-head"><h3>Adaptive LLM Personalization via Activation Engineering</h3><p class="when">Oct 2025 – Feb 2026</p></div>
+        <p class="entry-meta"><span class="pill">Concluded</span></p>
+        <p class="entry-body">Explored rapid LLM personalization through activation engineering, aiming to mitigate the cold-start problem without resource-intensive fine-tuning. Investigated the composition of steering vectors for fine-grained adaptation to diverse user backgrounds, revealing challenges in achieving precise and consistent control over response styles.</p>
+      </li>
+      <li class="entry" id="proj-emotion-multi-agent">
+        <div class="entry-head"><h3>Emotion Influence on LLM-Based <span class="nowrap">Multi-Agent</span> Systems</h3><p class="when">Jun 2025 – Sep 2025</p></div>
+        <p class="entry-meta"><span class="pill">Concluded</span><a class="meta-link" href="https://github.com/ruayz/multi-agent">Code</a></p>
+        <p class="entry-body">Studied how emotional stimuli affect agent behavior across network topologies; found no consistent sensitivity patterns and that modern LLMs remain robust to emotion-induced perturbations.</p>
+      </li>
+      <li class="entry entry-compact" id="proj-fair-privacy">
+        <div class="entry-head"><h3>Fair Privacy</h3><p class="when">Nov 2024 – May 2025</p></div>
+        <p class="entry-meta"><span class="pill">Concluded</span><span class="pill pill-note">M.Eng. thesis</span><a class="meta-link" href="#pub-fair-privacy">Paper (preprint, 2025)<span aria-hidden="true"> ↓</span></a></p>
+      </li>
+      <li class="entry entry-compact" id="proj-fairness-privacy">
+        <div class="entry-head"><h3>Fairness &amp; Privacy</h3><p class="when">Mar 2024 – Jul 2024</p></div>
+        <p class="entry-meta"><span class="pill">Concluded</span><span class="pill pill-note">M.Eng. thesis</span><a class="meta-link" href="#pub-iconip">Paper (ICONIP 2024)<span aria-hidden="true"> ↓</span></a></p>
+      </li>
+      <li class="entry entry-compact" id="proj-explainability-fairness">
+        <div class="entry-head"><h3>Explainability &amp; Fairness</h3><p class="when">Feb 2023 – Jun 2023</p></div>
+        <p class="entry-meta"><span class="pill">Concluded</span><span class="pill pill-note">B.Eng. thesis</span><a class="meta-link" href="#pub-icann">Paper (ICANN 2023)<span aria-hidden="true"> ↓</span></a></p>
+      </li>
+    </ul>
+  </section>
 
   <section id="publications" aria-labelledby="pubs-title">
     <h2 id="pubs-title">Publications</h2>
@@ -262,74 +317,30 @@
     </ol>
   </section>
 
-  <section id="projects" aria-labelledby="projects-title">
-    <h2 id="projects-title">Research projects</h2>
-    <!-- To add a project: copy this block to the TOP of the list and edit it.
-         <li class="entry" id="proj-short-name">
-           <div class="entry-head"><h3>Project Title</h3><p class="when">Jan 2027 – present</p></div>
-           <p class="entry-meta"><span class="pill pill-live">Ongoing</span></p>
-           <p class="entry-body">One or two sentences about the project.</p>
-         </li>
-         Every project shows one status: Ongoing, or once it has ended <span class="pill">Concluded</span>.
-         Thesis?  also add <span class="pill pill-note">M.Eng. thesis</span>.
-         Has a paper above?  add <a class="meta-link" href="#pub-short-name">Paper (VENUE 2026)<span aria-hidden="true"> ↑</span></a>
-         Past work with a paper above can use the short form (class="entry entry-compact", no description).
-    -->
-    <ul class="entries" role="list">
-      <li class="entry" id="proj-visual-redundancy">
-        <div class="entry-head"><h3>Impact of Visual Redundancy on Multimodal Reasoning</h3><p class="when">Jan 2025 – present</p></div>
-        <p class="entry-meta"><span class="pill pill-live">Ongoing</span></p>
-        <p class="entry-body">How excessive visual tokens can degrade the performance of vision-language models on cross-modal question answering.</p>
-      </li>
-      <li class="entry" id="proj-llm-personalization">
-        <div class="entry-head"><h3>Adaptive and Continual LLM Personalization via Interaction</h3><p class="when">Oct 2025 – present</p></div>
-        <p class="entry-meta"><span class="pill pill-live">Ongoing</span></p>
-        <p class="entry-body">Rapid adaptation to user backgrounds via activation engineering, mitigating cold start without costly fine-tuning, plus a closed-loop feedback mechanism for continual alignment over multi-turn interactions.</p>
-      </li>
-      <li class="entry" id="proj-emotion-multi-agent">
-        <div class="entry-head"><h3>Emotion Influence on LLM-Based <span class="nowrap">Multi-Agent</span> Systems</h3><p class="when">Jun 2025 – Sep 2025</p></div>
-        <p class="entry-meta"><span class="pill">Concluded</span><a class="meta-link" href="https://github.com/ruayz/multi-agent">Code</a></p>
-        <p class="entry-body">Studied how emotional stimuli affect agent behavior across network topologies; found no consistent sensitivity patterns and that modern LLMs remain robust to emotion-induced perturbations.</p>
-      </li>
-      <li class="entry entry-compact" id="proj-fair-privacy">
-        <div class="entry-head"><h3>Fair Privacy</h3><p class="when">Nov 2024 – May 2025</p></div>
-        <p class="entry-meta"><span class="pill">Concluded</span><span class="pill pill-note">M.Eng. thesis</span><a class="meta-link" href="#pub-fair-privacy">Paper (preprint, 2025)<span aria-hidden="true"> ↑</span></a></p>
-      </li>
-      <li class="entry entry-compact" id="proj-fairness-privacy">
-        <div class="entry-head"><h3>Fairness &amp; Privacy</h3><p class="when">Mar 2024 – Jul 2024</p></div>
-        <p class="entry-meta"><span class="pill">Concluded</span><a class="meta-link" href="#pub-iconip">Paper (ICONIP 2024)<span aria-hidden="true"> ↑</span></a></p>
-      </li>
-      <li class="entry entry-compact" id="proj-explainability-fairness">
-        <div class="entry-head"><h3>Explainability &amp; Fairness</h3><p class="when">Feb 2023 – Jun 2023</p></div>
-        <p class="entry-meta"><span class="pill">Concluded</span><span class="pill pill-note">B.Eng. thesis</span><a class="meta-link" href="#pub-icann">Paper (ICANN 2023)<span aria-hidden="true"> ↑</span></a></p>
-      </li>
-    </ul>
-  </section>
-
   <section id="education" aria-labelledby="education-title">
     <h2 id="education-title">Education</h2>
     <!-- To add a degree: copy this block to the TOP of the list and edit it (the last line is optional).
          <li class="entry">
            <div class="entry-head"><h3>Degree name</h3><p class="when">Sep 2026 – May 2031</p></div>
-           <p class="entry-place">University · Department</p>
+           <p class="entry-place">University Name (ABBR)</p>
            <p class="entry-body">Advisor, GPA or other detail.</p>
          </li>
     -->
     <ul class="entries" role="list">
       <li class="entry">
-        <div class="entry-head"><h3>Ph.D. in Data Science</h3><p class="when">2026 – present</p></div>
-        <p class="entry-place">William &amp; Mary · Department of Data Science, School of Computing, Data Sciences &amp; Physics</p>
+        <div class="entry-head"><h3>Ph.D. in Applied Science <span class="muted">(Data Science concentration)</span></h3><p class="when">Fall 2026 – present</p></div>
+        <p class="entry-place">William &amp; Mary (W&amp;M)</p>
         <p class="entry-body">Advisor: <a href="https://jd92.wang/">Prof.&nbsp;Jindong&nbsp;Wang</a></p>
       </li>
       <li class="entry">
-        <div class="entry-head"><h3>M.Eng. in Computer Science and Technology</h3><p class="when">Sep 2023 – 2026</p></div>
+        <div class="entry-head"><h3>M.Eng. in Computer Science and Technology</h3><p class="when">Sep 2023 – Jun 2026</p></div>
         <p class="entry-place">Southern University of Science and Technology (SUSTech)</p>
         <p class="entry-body">Advisors: <a href="https://changwuhuang.github.io/">Dr. Changwu Huang</a>, <a href="https://www.sustech.edu.cn/en/faculties/tangke.html">Prof. Ke Tang</a>, <a href="https://scholar.google.co.uk/citations?user=UUtYPl4AAAAJ&amp;hl=en">Prof. Xin Yao</a></p>
       </li>
       <li class="entry">
         <div class="entry-head"><h3>B.Eng. in Software Engineering</h3><p class="when">Sep 2019 – Jun 2023</p></div>
-        <p class="entry-place">Yunnan University</p>
-        <p class="entry-body">GPA 3.8/4.0 (top 2%)</p>
+        <p class="entry-place">Yunnan University (YNU)</p>
+        <p class="entry-body">GPA 3.8/4.0 (Top 2%)</p>
       </li>
     </ul>
   </section>
@@ -338,14 +349,14 @@
     <h2 id="honors-title">Honors &amp; awards</h2>
     <!-- To add an award: copy this line to the TOP of the list (newest first) and edit it.
          The grey detail in <span class="muted">(…)</span> is optional.
-         <li><span>Award name <span class="muted">(top 10%, Dept. of Data Science, W&amp;M)</span></span><time datetime="2026-05">May 2026</time></li>
+         <li><span>Award name <span class="muted">(Top 10%, Dept. of Data Science, W&amp;M)</span></span><time datetime="2026-05">May 2026</time></li>
          Won it in several years?  Replace the <time>…</time> part with <span class="date">2027, 2026</span>.
     -->
     <ul class="honors" role="list">
-      <li><span>Top Academic Scholarship <span class="muted">(top 20%, Dept. of CS, SUSTech)</span></span><time datetime="2025-10">Oct 2025</time></li>
+      <li><span>Outstanding Academic Scholarship, SUSTech</span><time datetime="2025-10">Oct 2025</time></li>
+      <li><span>Outstanding Research Assistance Scholarship, SUSTech</span><span class="date">2025, 2024</span></li>
       <li><span>Outstanding Graduate Teaching Assistant, SUSTech</span><time datetime="2024-09">Sep 2024</time></li>
-      <li><span>Top Research Assistance Scholarship <span class="muted">(top 20%, Dept. of CS, SUSTech)</span></span><time datetime="2024-09">Sep 2024</time></li>
-      <li><span>National Scholarship <span class="muted">(top 1%, School of Software, Yunnan University)</span></span><time datetime="2022-12">Dec 2022</time></li>
+      <li><span>National Scholarship <span class="muted">(Top 1%, School of Software, Yunnan University)</span></span><time datetime="2022-12">Dec 2022</time></li>
       <li><span>National Silver Award, 8th China “Internet+” Innovation and Entrepreneurship Competition</span><time datetime="2022-11">Nov 2022</time></li>
       <li><span>University-level First-class Scholarship, Yunnan University</span><span class="date">2021, 2020</span></li>
     </ul>

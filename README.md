@@ -23,9 +23,9 @@ python3 -m http.server 8000
 ```
 
 Then open <http://localhost:8000/>. (Opening `index.html` directly also works.
-The "Copy" buttons next to the email addresses need a secure page: https,
-localhost, or a file opened directly. On other plain-http addresses they stay
-hidden and the addresses can still be selected and copied by hand.)
+The "Copy" button next to the email address needs a secure page: https,
+localhost, or a file opened directly. On other plain-http addresses it stays
+hidden and the address can still be selected and copied by hand.)
 
 ## 添加论文 · Add a publication
 
@@ -48,8 +48,8 @@ to the top of the list. Every project shows one status pill:
 `<span class="pill pill-live">Ongoing</span>`, or once it has ended
 `<span class="pill">Concluded</span>`. A thesis also gets
 `<span class="pill pill-note">M.Eng. thesis</span>`. Link to a paper on this
-page (Publications is above Projects, hence the ↑) instead of repeating its title:
-`<a class="meta-link" href="#pub-short-name">Paper (VENUE 2026)<span aria-hidden="true"> ↑</span></a>`.
+page (Publications is below Projects, hence the ↓) instead of repeating its title:
+`<a class="meta-link" href="#pub-short-name">Paper (VENUE 2026)<span aria-hidden="true"> ↓</span></a>`.
 
 ## 添加奖项 / 助教 / 学位 · Add an award, a teaching entry or a degree
 
@@ -133,7 +133,7 @@ there is no tail thump or screen-reader message.
 ## 其他 · Other notes
 
 - **After editing `style.css` or `script.js`**: in the `<head>` of `index.html`,
-  raise the number in `style.css?v=5` / `script.js?v=5` (e.g. to `v=6`).
+  raise the number in `style.css?v=8` / `script.js?v=8` (e.g. to `v=9`).
   Browsers keep these files for about 10 minutes; a new number makes them
   fetch the new version at once instead of mixing new HTML with old styles.
 
@@ -146,7 +146,8 @@ there is no tail thump or screen-reader message.
   change a dark colour in both places.
 - Everything works with JavaScript turned off (the theme switch and the Copy
   buttons are then hidden, and the dog just lies at the end of the line).
-- **Email addresses**: shown under the links at the top of `index.html`
-  (search `email-list`); each line is one address with its Copy button. The
-  "Email" link above them opens the W&M address (`mailto:zyang23&#64;wm.edu`).
+- **Email address**: shown under the links at the top of `index.html`
+  (search `email-list`), with its Copy button; to show another address, copy
+  that `<li class="email-line">` line and give it a new `id`. The "Email" link
+  above it opens the same W&M address (`mailto:zyang23&#64;wm.edu`).
 - Respecting "reduce motion": all animation stops if the visitor asks for it.
