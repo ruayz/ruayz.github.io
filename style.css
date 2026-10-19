@@ -534,6 +534,41 @@ h3 {
   font: 500 0.875rem/1.25 var(--sans);
 }
 
+/* ---------- Visitor map (MapMyVisitors), centred at the end of the page ----------
+   The image's ocean is the page colour, so only the land and the dots show.
+   The patch (::after) hides the "+ / −" zoom buttons drawn into the image's
+   lower-left corner (they do nothing in a picture). */
+.visitor-map {
+  margin-top: var(--section-gap);
+  text-align: center;
+}
+.visitor-map a {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  border-radius: 6px;
+  vertical-align: top;
+}
+.visitor-map img {
+  display: block;
+  width: 360px;
+  max-width: 100%;
+  height: auto;
+}
+/* before the script has picked a version (or with JavaScript off, where the
+   <noscript> copy is shown instead) the empty image takes no room */
+.visitor-map img[data-light]:not([srcset]) { display: none; }
+.visitor-map a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 6%;
+  height: 20%;
+  background: var(--paper);
+}
+.visitor-map a:hover img { opacity: 0.85; }
+
 /* Publications */
 .pub { padding: 1.5rem 0; }
 .pub:first-child { padding-top: 0.2rem; }

@@ -130,10 +130,36 @@ there is no tail thump or screen-reader message.
 - **The drawing** is the `<svg class="dog-art">` inside that button. It is
   hand-tuned artwork; there is no need to edit it.
 
+## 访客地图 · Visitor map
+
+The world map at the end of the page comes from **MapMyVisitors** (account:
+the owner's; public stats: <https://mapmyvisitors.com/web/1c8yu>). It is a
+single image: loading it is what counts a visit and places a dot (dots appear
+with a delay, red = earlier visitors, green = recent ones; their colours cannot
+be changed in the image version). In `index.html`, search for `visitor-map`.
+
+- **Colours**: in the `map.png` addresses, `co=` is the ocean (keep it the
+  same as the page background: `faf7f1` light, `111726` dark) and `cl=` the land.
+  `data-light` / `data-dark` hold the two versions; the `<noscript>` copy below
+  them (for visitors without JavaScript) repeats both, so change it too.
+- **Size**: `w=360` / `w=720` in the addresses (normal / sharp screens) and
+  `width: 360px` under "Visitor map" in `style.css`. Keep the image's 2.04 : 1
+  shape (the `width`/`height` on the `<img>`).
+- **One image per visit**: the image has no address of its own in the HTML;
+  the small script right after it copies `data-dark` or `data-light` into it
+  (following the theme switch too), so the browser fetches only one version and
+  a visit is not counted twice. Switching the theme while on the page loads the
+  other version once.
+- **Remove it**: delete the whole `<div class="visitor-map" …>…</div>` in
+  `index.html` (the CSS and the lines in `script.js` then do nothing).
+- **Privacy**: loading the image sends the visitor's IP address to
+  MapMyVisitors, which turns it into an approximate location; it sets no
+  cookies. If the image is blocked (some ad blockers do), the map is hidden.
+
 ## 其他 · Other notes
 
 - **After editing `style.css` or `script.js`**: in the `<head>` of `index.html`,
-  raise the number in `style.css?v=8` / `script.js?v=8` (e.g. to `v=9`).
+  raise the number in `style.css?v=9` / `script.js?v=9` (e.g. to `v=10`).
   Browsers keep these files for about 10 minutes; a new number makes them
   fetch the new version at once instead of mixing new HTML with old styles.
 

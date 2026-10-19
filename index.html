@@ -33,10 +33,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500,50&amp;family=Newsreader:ital,wght@0,400..600;1,400&amp;display=swap">
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style.css?v=9">
 
 <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
-<script src="script.js?v=8" defer></script>
+<script src="script.js?v=9" defer></script>
 
 <script type="application/ld+json">
 {
@@ -379,6 +379,22 @@
       </li>
     </ul>
   </section>
+
+  <!-- Visitor map (MapMyVisitors): where visitors come from. Loading the
+       image is what counts a visit, so each page view must fetch exactly one
+       of its two versions (light or dark colours). The addresses are kept in
+       data-light / data-dark, and the small script picks one; that way the
+       browser cannot fetch the other one early. README, "Visitor map". -->
+  <div class="visitor-map" id="visitor-map">
+    <a href="https://mapmyvisitors.com/web/1c8yu" title="Visitor map (MapMyVisitors)">
+      <img data-light="https://mapmyvisitors.com/map.png?d=V-sTxuw3wwlWdPMXTZi3GjiW-BVVKQgA-xv171mvML0&amp;t=n&amp;w=360&amp;co=faf7f1&amp;cl=e3dccf 1x, https://mapmyvisitors.com/map.png?d=V-sTxuw3wwlWdPMXTZi3GjiW-BVVKQgA-xv171mvML0&amp;t=n&amp;w=720&amp;co=faf7f1&amp;cl=e3dccf 2x"
+           data-dark="https://mapmyvisitors.com/map.png?d=V-sTxuw3wwlWdPMXTZi3GjiW-BVVKQgA-xv171mvML0&amp;t=n&amp;w=360&amp;co=111726&amp;cl=2a3449 1x, https://mapmyvisitors.com/map.png?d=V-sTxuw3wwlWdPMXTZi3GjiW-BVVKQgA-xv171mvML0&amp;t=n&amp;w=720&amp;co=111726&amp;cl=2a3449 2x"
+           width="360" height="176" alt="World map of where this site&#39;s visitors come from" decoding="async" fetchpriority="low">
+      <script>(function(){var i=document.currentScript.previousElementSibling,t=document.documentElement.getAttribute("data-theme");if(t!=="dark"&&t!=="light")t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";i.setAttribute("data-shown",t);i.srcset=i.getAttribute("data-"+t);})();</script>
+      <!-- without JavaScript: the same map, light or dark following the system -->
+      <noscript><picture><source media="(prefers-color-scheme: dark)" srcset="https://mapmyvisitors.com/map.png?d=V-sTxuw3wwlWdPMXTZi3GjiW-BVVKQgA-xv171mvML0&amp;t=n&amp;w=360&amp;co=111726&amp;cl=2a3449 1x, https://mapmyvisitors.com/map.png?d=V-sTxuw3wwlWdPMXTZi3GjiW-BVVKQgA-xv171mvML0&amp;t=n&amp;w=720&amp;co=111726&amp;cl=2a3449 2x"><img src="https://mapmyvisitors.com/map.png?d=V-sTxuw3wwlWdPMXTZi3GjiW-BVVKQgA-xv171mvML0&amp;t=n&amp;w=360&amp;co=faf7f1&amp;cl=e3dccf" srcset="https://mapmyvisitors.com/map.png?d=V-sTxuw3wwlWdPMXTZi3GjiW-BVVKQgA-xv171mvML0&amp;t=n&amp;w=360&amp;co=faf7f1&amp;cl=e3dccf 1x, https://mapmyvisitors.com/map.png?d=V-sTxuw3wwlWdPMXTZi3GjiW-BVVKQgA-xv171mvML0&amp;t=n&amp;w=720&amp;co=faf7f1&amp;cl=e3dccf 2x" width="360" height="176" alt="World map of where this site&#39;s visitors come from"></picture></noscript>
+    </a>
+  </div>
 
   <!-- Screen readers hear short status messages from here (copy email, pet the dog) -->
   <p class="sr-only" aria-live="polite" id="live-status"></p>
