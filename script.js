@@ -28,6 +28,7 @@
   var toggle = document.querySelector(".theme-toggle");
   var themeMetas = document.querySelectorAll('meta[name="theme-color"]');
   var dogBtn = document.querySelector(".dog");   // the footer dog: awake by day, asleep after dark
+  var mapImg = document.querySelector(".visitor-map img[data-light]");   // the visitor map (light/dark versions)
 
   function sync() {
     var dark = theme() === "dark";
@@ -41,6 +42,12 @@
     }
     // its title is the dog button's name (and tooltip)
     if (dogBtn) dogBtn.title = dark ? "Pet the sleeping dog" : "Pet the dog";
+    // the visitor map: switch to the dark or light version (fetched once each)
+    var want = dark ? "dark" : "light";
+    if (mapImg && mapImg.getAttribute("data-shown") !== want) {
+      mapImg.setAttribute("data-shown", want);
+      mapImg.srcset = mapImg.getAttribute("data-" + want);
+    }
   }
 
   if (toggle) {
@@ -55,6 +62,13 @@
   if (darkMQ.addEventListener) darkMQ.addEventListener("change", sync);
   else if (darkMQ.addListener) darkMQ.addListener(sync);
   sync();
+
+  /* ----- Visitor map: hide it if the image cannot load (blocked or offline) ----- */
+  if (mapImg) {
+    var hideMap = function () { document.getElementById("visitor-map").hidden = true; };
+    if (mapImg.complete && !mapImg.naturalWidth) hideMap();
+    else mapImg.addEventListener("error", hideMap);
+  }
 
   /* ----- Short messages for screen readers (copy email, pet the dog) ----- */
   var status = document.getElementById("live-status");
